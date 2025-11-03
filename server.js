@@ -1,12 +1,13 @@
-const express = require('express');
+const express = 
+require('express');
 
-const app = express(); //Calling this function sets up a server
-
+const app = express(); 
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res)=>{
     console.log('Here');
-    res.send("Hello World!");
-}); //this function will run when someone goes to the root flder
+    res.render("index");
+}); 
 
 app.listen(3030);
 
