@@ -6,8 +6,16 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res)=>{
     console.log('Here');
-    res.render("index");
+    res.render("index", 
+        {user:"George!",});
 }); 
+app.get('/users', (req, res)=>{
+    res.send('User List');
+});
+app.get('/users/new', (req, res)=>{
+    res.send('New User Form');
+});
+
 
 app.listen(3030);
 
