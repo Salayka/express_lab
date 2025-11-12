@@ -10,5 +10,16 @@ router.get('/', (req, res)=>{
 router.get('/new', (req, res)=>{
     res.send('New User Form');
 });
+// router.get('/:id',(req, res)=>{
+// 	res.send(`Getting User data: ${req.params.id}`);
+// });
+router.route("/:id").get('/:id',(req, res)=>{
+ 	res.send(`Getting User data: ${req.params.id}`);
+}).delete((req, res)=>{
+    res.send(`Deleting user with id: ${req.params.id}`);
+}).put((req, res)=>{
+    res.send(`Updating user with id: ${req.params.id}`);
+});
+
 
 module.exports = router;
